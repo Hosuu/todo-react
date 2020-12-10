@@ -1,0 +1,184 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #333;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.page-container {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	font-weight: bold;
+	padding: 0.25em 0.5em;
+	background: #444;
+	border-bottom: 2px solid #222;
+	transition: all 0.25s ease;
+}
+
+.header-icon {
+	font-size: 1.25em;
+	margin-right: 15px;
+}
+
+.modal-bg {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #0007;
+	display: grid;
+	place-items: center;
+	animation: modal-bg-appear 0.25s ease-in-out;
+}
+
+.modal-bg.reverse {
+	animation: modal-bg-hide 0.25s ease-in-out;
+}
+
+@keyframes modal-bg-appear {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes modal-bg-hide {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.modal-container {
+	background: #444;
+	padding: 15px;
+	border: 3px solid #222;
+	border-radius: 15px;
+	animation: modal-container-appear 0.25s ease 0.1s both;
+	font-size: 1.5em;
+	width: 350px;
+}
+.modal-container.reverse {
+	animation: modal-container-hide 0.25s ease 0.1s both;
+}
+
+@keyframes modal-container-appear {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@keyframes modal-container-hide {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+
+.modal-label {
+	font-weight: bold;
+	font-size: 1.25em;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.modal-add-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.modal-form-input {
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid #222;
+	padding: 3px 7px;
+	font-size: 1.25rem;
+	outline: none;
+	font-family: 'Nunito', sans-serif;
+	color: #fff;
+	transition: border-color 0.35s ease-out;
+}
+
+.modal-form-input.wrong-data {
+	border-color: #a00;
+}
+.modal-form-input.wrong-animation {
+	animation: wrong-input-data 0.35s ease-out;
+}
+
+@keyframes wrong-input-data {
+	0% {
+		transform: translateX(0%);
+	}
+	12% {
+		transform: translateX(-2%);
+	}
+	37% {
+		transform: translateX(3%);
+	}
+	62% {
+		transform: translateX(-3%);
+	}
+	87% {
+		transform: translateX(2%);
+	}
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+.modal-form-buttons {
+	display: flex;
+	margin-top: 10px;
+}
+
+.modal-form-button {
+	flex: 1;
+	background: #2e2e2e;
+	border: none;
+	font-size: 1.5rem;
+	border-radius: 15px;
+	color: #fff;
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+	padding: 0.25em 1em;
+	text-align: center;
+	margin: 15px 10px 0px;
+	transition: background 0.35s ease;
+}
+
+.modal-form-button:hover {
+	background: #7777;
+}
